@@ -7,7 +7,8 @@ import { map, Observable, switchMap } from 'rxjs';
 })
 export class MangaDexService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'https://api.mangadex.org';
+  // private readonly apiUrl = 'https://api.mangadex.org';
+  private readonly apiUrl = '/api/mangadex';
 
   searchManga(title: string): Observable<any> {
     const params = new HttpParams()
