@@ -112,15 +112,7 @@ export class AppComponent {
   }
 
   getCoverUrl(manga: any): string | null {
-    const cover = manga.relationships?.find(
-      (rel: any) => rel.type === 'cover_art'
-    );
-  
-    const fileName = cover?.attributes?.fileName;
-  
-    if (!fileName) return null;
-  
-    return `/api/mangadex-upload/covers/${manga.id}/${fileName}`;
+    return this.mangaDexService.getCoverUrl(manga);
   }
 
   loadReadingHistory(): void {
