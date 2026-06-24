@@ -56,9 +56,11 @@ export class MangaDexService {
 
           const mode = dataSaver ? 'data-saver' : 'data';
 
-          return files.map(
-            (fileName: string) => `${baseUrl}/${mode}/${hash}/${fileName}`
-          );
+          return files.map((fileName: string) => {
+            const path = `${mode}/${hash}/${fileName}`;
+          
+            return `/api/mangadex-upload/${path}`;
+          });
         })
       );
   }
