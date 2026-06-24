@@ -1,0 +1,113 @@
+.reader-container {
+    padding: 24px;
+  }
+  
+  .search-box {
+    margin-bottom: 24px;
+  }
+  
+  .search-row {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .search-row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .search-row button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+  }
+  
+  .manga-card {
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .manga-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .manga-card.selected {
+    border: 2px solid #1976d2;
+  }
+  
+  .manga-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+  }
+  
+  .manga-info {
+    padding: 12px;
+  }
+  
+  .manga-info h3 {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .content-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .chapters-panel {
+    position: sticky;
+    top: 16px;
+    align-self: start;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .chapter-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .chapter-button.selected {
+    background: #1976d2;
+    color: white;
+  }
+  
+  .scan-viewer {
+    min-width: 0;
+  }
+  
+  .pages-list img {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto 12px;
+  }
+  
+  @media (max-width: 768px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .chapters-panel {
+      position: static;
+      max-height: none;
+    }
+  }
